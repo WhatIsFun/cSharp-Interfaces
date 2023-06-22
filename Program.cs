@@ -9,6 +9,7 @@ namespace cSharp_interface
         static void Main(string[] args)
         {
             //IShape Example
+            Console.WriteLine("IShape Example");
             Circle crc = new Circle(5);
             Console.WriteLine($"The area of the circle is: {crc.CalculateArea()}, and the perimeter is: {crc.CalculaterPerimter()}");
             Console.WriteLine("_______________________________________________");
@@ -25,6 +26,8 @@ namespace cSharp_interface
                 Create two classes Car and Motorcycle that implement the IVehicle interface. 
                 Implement the methods according to the behavior of each vehicle type.
              */
+            Console.WriteLine("___________________________");
+            Console.WriteLine("Task 1: IVehicle");
             Car car = new Car();
             Motorcycle motorcycle = new Motorcycle();
             car.Start();
@@ -41,13 +44,17 @@ namespace cSharp_interface
             The SavingsAccount class should override the Deposit() and Withdraw() methods to add and subtract 
             money from the savings account balance. The CheckingAccount class should override the Deposit() and
             Withdraw() methods to add and subtract money from the checking account balance.*/
-
+            Console.WriteLine("___________________________");
+            Console.WriteLine("Task 2: IBankAccount ");
             SavingsAccount SA = new SavingsAccount(300);
+            Console.WriteLine("~~ ~ Saving Account ~ ~~");
             SA.GetBalance();
             SA.Deposit(30);
             SA.Withdraw(50);
 
             CheckingAccount CA = new CheckingAccount(200);
+            Console.WriteLine("~~ ~ Checking Account ~ ~~");
+
             CA.GetBalance();
             CA.Deposit(50);
             CA.Withdraw(50);
