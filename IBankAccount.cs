@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace cSharp_interface
 {
-    internal interface Interface1
+    internal interface IBankAccount
     {
+        double GetBalance();
+        void Deposit(double amount);
+        void Withdraw(double amount);
     }
 }
