@@ -8,5 +8,9 @@ namespace cSharp_interface
 {
     internal interface IPlayable
     {
+        void Play();
+        void Pause();
+        void Stop();
+
     }
 }

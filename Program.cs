@@ -12,7 +12,7 @@ namespace cSharp_interface
             Console.WriteLine("IShape Example");
             Circle crc = new Circle(5);
             Console.WriteLine($"The area of the circle is: {crc.CalculateArea()}, and the perimeter is: {crc.CalculaterPerimter()}");
-            Console.WriteLine("_______________________________________________");
+            Console.WriteLine("*** **  *  ** ***");
 
             Rectangle rec = new Rectangle(4, 6);
             Console.WriteLine($"The area of the rectangle is: {rec.CalculateArea()}, and the perimeter is: {rec.CalculaterPerimter()}");
@@ -59,6 +59,18 @@ namespace cSharp_interface
             CA.Deposit(50);
             CA.Withdraw(50);
 
+            Console.WriteLine("___________________________");
+            Console.WriteLine("Task 3: IPlayable");
+            MusicPlayer musicPlayer = new MusicPlayer();
+            VideoPlayer videoPlayer = new VideoPlayer();
+            Console.WriteLine("🎵🎵 Music Player 🎵🎵");
+            musicPlayer.Play();
+            musicPlayer.Pause();
+            musicPlayer.Stop();
+            Console.WriteLine("📽️📽️ Video Player 📽️📽️");
+            videoPlayer.Play();
+            videoPlayer.Pause();
+            videoPlayer.Stop();
 
         }
     }
@@ -145,7 +157,7 @@ namespace cSharp_interface
     }
 
     //Task 2
-    internal class SavingsAccount : IBankAccount
+    internal class SavingsAccount : IBankAccount // Saving Account Class
     {
         private double balance;
 
@@ -189,7 +201,8 @@ namespace cSharp_interface
                 Console.WriteLine("Invalid amount. Withdrawal failed.");
             }
         }
-        internal class CheckingAccount : IBankAccount
+    }
+        internal class CheckingAccount : IBankAccount  // Checking Account class 
         {
             private double balance;
             public CheckingAccount(double balance)
@@ -234,6 +247,49 @@ namespace cSharp_interface
                 }
             }
         }
+    /* Task 3: Create an interface IPlayable with the following methods:
+        void Play()
+        void Pause()
+        void Stop()
+        Create two classes MusicPlayer and VideoPlayer that implement the IPlayable interface.
+        Implement the methods to control the playback of music and videos.
+     */
 
+    internal class MusicPlayer : IPlayable
+    {
+        public void Pause() 
+        {
+            Console.WriteLine("The music has paused");
+        }
+
+        public void Play()
+        {
+            Console.WriteLine("The music has played");
+        }
+
+        public void Stop()
+        {
+            Console.WriteLine("The music has stopped");
+        }
     }
+
+
+    internal class VideoPlayer : IPlayable
+    {
+        public void Pause()
+        {
+            Console.WriteLine("The video has paused");
+        }
+
+        public void Play()
+        {
+            Console.WriteLine("The video has played");
+        }
+
+        public void Stop()
+        {
+            Console.WriteLine("The video has stopped");
+        }
+    }
+
 }
