@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ySYDBW0+r3GqzhtuzrDrI0vUG4rKSj5QJxlfOF6sGedPxngA/UM3WfnMmzJ+VeC2srgfum5Ov5qda/FAPzYn+A==",
+  "dgSpecHash": "9njogzDs5s+bT/+f9ZSUtyNjAts4043KrQos735tkitLWcUMY/iQ7eomYx4Kfd1qVu5DR2h0jDvgMZCLsDw+uQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\code-TRA\\git-starter\\cSharp-interface\\cSharp-interface.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\moham\\Source\\Repos\\cSharp-Interfaces\\cSharp-interface.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\moham\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.18\\microsoft.windowsdesktop.app.ref.6.0.18.nupkg.sha512",
+    "C:\\Users\\moham\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.18\\microsoft.netcore.app.ref.6.0.18.nupkg.sha512",
+    "C:\\Users\\moham\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.18\\microsoft.aspnetcore.app.ref.6.0.18.nupkg.sha512",
+    "C:\\Users\\moham\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.18\\microsoft.netcore.app.host.win-x64.6.0.18.nupkg.sha512"
+  ],
   "logs": []
 }

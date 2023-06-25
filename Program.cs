@@ -60,6 +60,7 @@ namespace cSharp_interface
             CA.Withdraw(50);
 
             Console.WriteLine("___________________________");
+            //Task 3
             Console.WriteLine("Task 3: IPlayable");
             MusicPlayer musicPlayer = new MusicPlayer();
             VideoPlayer videoPlayer = new VideoPlayer();
@@ -72,6 +73,15 @@ namespace cSharp_interface
             videoPlayer.Pause();
             videoPlayer.Stop();
 
+            Console.WriteLine("___________________________");
+            //Task 4
+            Console.WriteLine("Task 4: IAnimal");
+            Dog dog = new Dog();
+            Cat cat = new Cat();
+            dog.Eat();
+            dog.Sleep();
+            cat.Eat();
+            cat.Sleep();
         }
     }
 
@@ -289,6 +299,38 @@ namespace cSharp_interface
         public void Stop()
         {
             Console.WriteLine("The video has stopped");
+        }
+    }
+
+    // Task 4:
+    /*Create an interface IAnimal with the following methods:
+    void Eat()
+    void Sleep()
+    Create two classes Dog and Cat that implement the IAnimal interface. 
+    Implement the methods according to the behavior of each animal.*/
+
+    internal class Cat : IAnimal
+    {
+        public void Eat()
+        {
+            Console.WriteLine("Cat food");
+        }
+
+        public void Sleep()
+        {
+            Console.WriteLine("Zzz");
+        }
+    }
+    internal class Dog : IAnimal
+    {
+        public void Eat()
+        {
+            Console.WriteLine("Dog food");
+        }
+
+        public void Sleep()
+        {
+            Console.WriteLine("Shhh");
         }
     }
 
