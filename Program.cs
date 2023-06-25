@@ -10,11 +10,11 @@ namespace cSharp_interface
         {
             //IShape Example
             Console.WriteLine("IShape Example");
-            Circle crc = new Circle(5);
+            IShape crc = new Circle(5);
             Console.WriteLine($"The area of the circle is: {crc.CalculateArea()}, and the perimeter is: {crc.CalculaterPerimter()}");
             Console.WriteLine("*** **  *  ** ***");
 
-            Rectangle rec = new Rectangle(4, 6);
+            IShape rec = new Rectangle(4, 6);
             Console.WriteLine($"The area of the rectangle is: {rec.CalculateArea()}, and the perimeter is: {rec.CalculaterPerimter()}");
 
             /* Task 1: IVehicle 
@@ -28,8 +28,8 @@ namespace cSharp_interface
              */
             Console.WriteLine("___________________________");
             Console.WriteLine("Task 1: IVehicle");
-            Car car = new Car();
-            Motorcycle motorcycle = new Motorcycle();
+            IVehicle car = new Car();
+            IVehicle motorcycle = new Motorcycle();
             car.Start();
             car.Accelerate(120);
             car.Brake();
@@ -46,13 +46,13 @@ namespace cSharp_interface
             Withdraw() methods to add and subtract money from the checking account balance.*/
             Console.WriteLine("___________________________");
             Console.WriteLine("Task 2: IBankAccount ");
-            SavingsAccount SA = new SavingsAccount(300);
+            IBankAccount SA = new SavingsAccount(300);
             Console.WriteLine("~~ ~ Saving Account ~ ~~");
             SA.GetBalance();
             SA.Deposit(30);
             SA.Withdraw(50);
 
-            CheckingAccount CA = new CheckingAccount(200);
+            IBankAccount CA = new CheckingAccount(200);
             Console.WriteLine("~~ ~ Checking Account ~ ~~");
 
             CA.GetBalance();
@@ -62,8 +62,8 @@ namespace cSharp_interface
             Console.WriteLine("___________________________");
             //Task 3
             Console.WriteLine("Task 3: IPlayable");
-            MusicPlayer musicPlayer = new MusicPlayer();
-            VideoPlayer videoPlayer = new VideoPlayer();
+            IPlayable musicPlayer = new MusicPlayer();
+            IPlayable videoPlayer = new VideoPlayer();
             Console.WriteLine("🎵🎵 Music Player 🎵🎵");
             musicPlayer.Play();
             musicPlayer.Pause();
@@ -76,12 +76,22 @@ namespace cSharp_interface
             Console.WriteLine("___________________________");
             //Task 4
             Console.WriteLine("Task 4: IAnimal");
-            Dog dog = new Dog();
-            Cat cat = new Cat();
+            IAnimal dog = new Dog();
+            IAnimal cat = new Cat();
             dog.Eat();
             dog.Sleep();
             cat.Eat();
             cat.Sleep();
+
+            //Task 5
+            ILogger fileLogger = new FileLogger();
+            ILogger databaseLogger = new DatabaseLogger();
+
+            fileLogger.LogInfo("Information message.");
+            fileLogger.LogError("Error");
+
+            databaseLogger.LogInfo("Information message.");
+            databaseLogger.LogError("Error");
         }
     }
 
@@ -333,5 +343,32 @@ namespace cSharp_interface
             Console.WriteLine("Shhh");
         }
     }
+
+    internal class FileLogger : ILogger
+    {
+        public void LogError(string errorMessage)
+        {
+            Console.WriteLine("FileLogger Error: " + errorMessage);
+        }
+
+        public void LogInfo(string message)
+        {
+            Console.WriteLine("FileLogger: " + message);
+        }
+    }
+    internal class DatabaseLogger : ILogger
+    {
+        public void LogError(string errorMessage)
+        {
+            Console.WriteLine("DatabaseLogger Error: " + errorMessage);
+        }
+
+        public void LogInfo(string message)
+        {
+            Console.WriteLine("DatabaseLogger: " + message);
+
+        }
+    }
+
 
 }

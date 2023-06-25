@@ -8,5 +8,8 @@ namespace cSharp_interface
 {
     internal interface ILogger
     {
+        void LogInfo(string message);
+        void LogError(string errorMessage);
+
     }
 }
