@@ -83,7 +83,9 @@ namespace cSharp_interface
             cat.Eat();
             cat.Sleep();
 
+            Console.WriteLine("___________________________");
             //Task 5
+            Console.WriteLine("Task 5: ILogger");
             ILogger fileLogger = new FileLogger();
             ILogger databaseLogger = new DatabaseLogger();
 
@@ -92,6 +94,20 @@ namespace cSharp_interface
 
             databaseLogger.LogInfo("Information message.");
             databaseLogger.LogError("Error");
+
+            Console.WriteLine("___________________________");
+            //Task 6
+            Console.WriteLine("Task 6: IEmployee");
+            IEmployee fullTimeEmployee = new FullTimeEmployee("Mohammed Said", 4000, "Software Engineer");
+            IEmployee partTimeEmployee = new PartTimeEmployee("Ali Mohammed", 1000, "Data Entry Clerk");
+
+            Console.WriteLine("Full-time employee name: " + fullTimeEmployee.GetName());
+            Console.WriteLine("Full-time employee salary: " + fullTimeEmployee.GetSalary());
+            Console.WriteLine("Full-time employee job title: " + fullTimeEmployee.GetJobTitle());
+
+            Console.WriteLine("Part-time employee name: " + partTimeEmployee.GetName());
+            Console.WriteLine("Part-time employee salary: " + partTimeEmployee.GetSalary());
+            Console.WriteLine("Part-time employee job title: " + partTimeEmployee.GetJobTitle());
         }
     }
 
@@ -275,7 +291,7 @@ namespace cSharp_interface
         Implement the methods to control the playback of music and videos.
      */
 
-    internal class MusicPlayer : IPlayable
+    internal class MusicPlayer : IPlayable 
     {
         public void Pause() 
         {
@@ -368,6 +384,51 @@ namespace cSharp_interface
             Console.WriteLine("DatabaseLogger: " + message);
 
         }
+    }
+
+    /*
+     * Task 6: 
+    Create an interface called IEmployee that has methods called GetName(), GetSalary(), and GetJobTitle(). 
+    Create two classes, FullTimeEmployee and PartTimeEmployee, that implement the IEmployee interface. 
+    The FullTimeEmployee class should override the GetName(), GetSalary(), and GetJobTitle() methods 
+    to return the full-time employee's name, salary, and job title. The PartTimeEmployee class should 
+    override the GetName(), GetSalary(), and GetJobTitle() methods to return the part-time employee's name, 
+    salary, and job title.
+     */
+    internal class FullTimeEmployee : IEmployee
+    {
+        private string fullName;
+        private double salary;
+        private string jobTitle;
+
+        public FullTimeEmployee(string fullName, double salary, string jobTitle)
+        {
+            this.fullName = fullName;
+            this.salary = salary;
+            this.jobTitle = jobTitle;
+        }
+        public string GetName() { return fullName; }
+        public double GetSalary() {  return salary; }
+        public string GetJobTitle() {  return jobTitle; }
+        
+    }
+    internal class PartTimeEmployee : IEmployee
+    {
+        private string fullName;
+        private double salary;
+        private string jobTitle;
+
+        public PartTimeEmployee(string fullName, double salary, string jobTitle)
+        {
+            this.fullName = fullName;
+            this.salary = salary;
+            this.jobTitle = jobTitle;
+        }
+
+        public string GetJobTitle() { return fullName; }
+        public double GetSalary() { return salary; }
+        public string GetName() { return fullName; }
+
     }
 
 
